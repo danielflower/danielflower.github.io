@@ -1,6 +1,6 @@
 ---
 layout: post_page
-title: Generating and a Maven plugin site and publishing to Github Pages
+title: Generating a Maven plugin site and publishing to Github Pages
 ---
 
 I have been working on a Maven plugin with a friend recently. This is the second plugin I've written for Maven. The first one I wrote
@@ -46,11 +46,11 @@ is a perfectly charming URL.
 This repo is a Maven plugin and so has some mojos defined using annotations, with some javadoc, for example:
 
 ```java
-    /**
-     * If true then tests will not be run during a release.
-     */
-    @Parameter(defaultValue = "false", property = "skipTests")
-    private boolean skipTests;
+/**
+ * If true then tests will not be run during a release.
+ */
+@Parameter(defaultValue = "false", property = "skipTests")
+private boolean skipTests;
 ```
 
 Given code like that, you get documentation generated looking like this:
