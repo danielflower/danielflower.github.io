@@ -19,7 +19,7 @@ the version of the plugin is always there, nice and clear.
 
 I had also noticed there were some nicer looking Maven sites around these days:
 
-![Screenshot of nicer maven site](/images/mvn-site/better-site.png)
+![Screenshot of nicer maven site](/images/mvn-site/better-site.PNG)
 
 Now that is a design that doesn't offend my eyes too badly. But while there is plenty of documentation around the web on maven sites, I found it
 wasn't clear on how to do exactly what I wanted to do, which was namely:
