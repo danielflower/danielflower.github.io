@@ -20,4 +20,5 @@ Step two was getting bootstrapped. I decided to just grab a simple design from [
 with [richbray.me/frap/](http://richbray.me/frap/) in the end. I just downloaded the theme and stuck it in the Git repo
 I just cloned. I pushed and cloned, then waited for a few minutes, and then I had a blog at `http://danielflower.github.io/`. Cool!
 
-Then I just made a few changes, pushed again, and this blog exists.
+Then I just [made a few changes](https://github.com/danielflower/danielflower.github.io/commit/f2efeced6cc83e37fd0eb2e339d4e03d532ab98b), 
+pushed again, and this blog exists. Tools used: notepad++ and Git.
