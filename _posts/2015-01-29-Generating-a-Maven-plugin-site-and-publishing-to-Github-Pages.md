@@ -10,7 +10,7 @@ of the GitHub repo showing usage instructions, rather than generating a Maven si
 I have always actively avoided Maven sites. I think it is because they are often full of automatically-generated useless
 information, and by default they look horrible:
 
-![Screenshot of default maven site](mvn-site/horrible-site.png)
+![Screenshot of default maven site](images/mvn-site/horrible-site.png)
 
 But this time, I decided it would be worth actually learning how to create maven sites properly, because I am hoping
 the plugin I'm working on will be used a bit, and every time I use a plugin and hit a maven generated site I go straight
@@ -19,7 +19,7 @@ the version of the plugin is always there, nice and clear.
 
 I had also noticed there were some nicer looking Maven sites around these days:
 
-![Screenshot of nicer maven site](mvn-site/better-site.png)
+![Screenshot of nicer maven site](images/mvn-site/better-site.png)
 
 Now that is a design that doesn't offend my eyes too badly. But while there is plenty of documentation around the web on maven sites, I found it
 wasn't clear on how to do exactly what I wanted to do, which was namely:
@@ -55,7 +55,7 @@ This repo is a Maven plugin and so has some mojos defined using annotations, wit
 
 Given code like that, you get documentation generated looking like this:
 
-![Optional paramaters for the plugin](mvn-site/mojo-options.png)
+![Optional paramaters for the plugin](images/mvn-site/mojo-options.png)
 
 Generating the site
 -------------------
