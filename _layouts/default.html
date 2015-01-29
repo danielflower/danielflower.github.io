@@ -3,11 +3,8 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>{% if page.title %} {{ page.title }} {% endif %} - by Daniel Flower</title>
-		<!-- For responsive site
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link rel="author" href="/humans.txt">
 		<meta name="description" content="Description Goes Here">
 		<link rel="stylesheet" href="/css/style.css">
 		<!--[if IE 7]>
@@ -26,8 +23,6 @@
 		<link rel="shortcut icon" href="ico/favicon.png">	    
 	</head>
 	<body>
-	<!-- Header
-	    ================================================== -->
 	<header>
 
 	</header>
@@ -40,18 +35,16 @@
 		</div>
 	</footer>
 
-	<!-- Footer
-	    ================================================== -->
-
-	<!-- Javascripts 
-	    ================================================= -->
 	<script src="/js/jquery.min.js"></script>
-	<script src="/js/custom.js"></script>
 
-    <!-- Analytics
-    ================================================== -->
-    <script>
-		// analytics code
-    </script>	
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-59122302-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 	</body>
 </html>
