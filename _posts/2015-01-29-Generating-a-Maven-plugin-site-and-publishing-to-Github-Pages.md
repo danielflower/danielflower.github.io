@@ -63,18 +63,20 @@ Generating the site
 The first thing you should do is add a reference to the Maven site plugin and add the plugin that allows conversion of markdown
 to HTML during site generation:
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.4</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.doxia</groupId>
-                        <artifactId>doxia-module-markdown</artifactId>
-                        <version>1.6</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+```xml
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.doxia</groupId>
+                <artifactId>doxia-module-markdown</artifactId>
+                <version>1.6</version>
+            </dependency>
+        </dependencies>
+    </plugin>
+```
 
 At this stage, running `mvn site` will generate an ugly site and stick it your `target/site` folder, however it will not have
 any documentation generated for the plugin goals and parameters. To do that, you need to add the `maven-plugin-plugin` to the
@@ -84,35 +86,35 @@ Working on a plugin, you will already have the `maven-plugin-plugin` defined els
 using a goal prefix - which you should be - you will need to configure this in both declarations of the plugin-plugin otherwise
 the documentation will be wrong. So using a property is a good idea for this.
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.4</version>
-                <configuration>
-                    <goalPrefix>${plugin.goal.prefix}</goalPrefix>
-                </configuration>
-            </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+            <goalPrefix>${plugin.goal.prefix}</goalPrefix>
+        </configuration>
+    </plugin>
 
 Running `mvn site` now will generate a bit too much stuff. All those default reports really are rather useless, and also an
 `index.html` is generated. I wanted to have my own custom index page, and not have so many reports. To do this, you need to
 actually define another report that is normally defined by default and specify just the reports you do want:
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.8</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>project-team</report>
-                            <report>cim</report>
-                            <report>issue-tracking</report>
-                            <report>license</report>
-                            <report>scm</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.8</version>
+        <reportSets>
+            <reportSet>
+                <reports>
+                    <report>project-team</report>
+                    <report>cim</report>
+                    <report>issue-tracking</report>
+                    <report>license</report>
+                    <report>scm</report>
+                </reports>
+            </reportSet>
+        </reportSets>
+    </plugin>
 
 Adding custom pages
 -------------------
