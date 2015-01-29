@@ -46,6 +46,7 @@ is a perfectly charming URL.
 This repo is a Maven plugin and so has some mojos defined using annotations, with some javadoc, for example:
 
 {% highlight java %}
+
     /**
      * If true then tests will not be run during a release.
      */
@@ -64,6 +65,7 @@ The first thing you should do is add a reference to the Maven site plugin and ad
 to HTML during site generation:
 
 {% highlight xml %}
+
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
@@ -86,6 +88,8 @@ Working on a plugin, you will already have the `maven-plugin-plugin` defined els
 using a goal prefix - which you should be - you will need to configure this in both declarations of the plugin-plugin otherwise
 the documentation will be wrong. So using a property is a good idea for this.
 
+{% highlight xml %}
+
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>
@@ -95,9 +99,13 @@ the documentation will be wrong. So using a property is a good idea for this.
         </configuration>
     </plugin>
 
+{% endhighlight %}
+
 Running `mvn site` now will generate a bit too much stuff. All those default reports really are rather useless, and also an
 `index.html` is generated. I wanted to have my own custom index page, and not have so many reports. To do this, you need to
 actually define another report that is normally defined by default and specify just the reports you do want:
+
+{% highlight xml %}
 
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -116,6 +124,8 @@ actually define another report that is normally defined by default and specify j
         </reportSets>
     </plugin>
 
+{% endhighlight %}
+
 Adding custom pages
 -------------------
 
@@ -129,6 +139,8 @@ at [src/site/markdown/usage.md](https://github.com/danielflower/multi-module-mav
 and this is just a simple markdown file.
 
 The usage page includes instructions on how to use the plugin. The source looks like this:
+
+{% highlight xml %}
 
     <build>
         <plugins>
@@ -145,6 +157,8 @@ The usage page includes instructions on how to use the plugin. The source looks 
         </plugins>
     </build>
 
+{% endhighlight %}
+
 Obviously I wanted do have the `${project.*}` variables automatically replaced during site generation. This didn't work the first time, but
 after some googling I found you just need to append `.vm` to your filename and then you can use pom expressions. So this is cool - the version
 specified here will always be up to date.
@@ -157,6 +171,8 @@ Navigation
 
 Navigation is defined in [src/site/site.xml](https://github.com/danielflower/multi-module-maven-release-plugin/blob/master/src/site/site.xml):
 
+{% highlight xml %}
+
     <body>
         <menu name="Overview">
             <item name="Introduction" href="index.html"/>
@@ -167,6 +183,8 @@ Navigation is defined in [src/site/site.xml](https://github.com/danielflower/mul
         <menu ref="reports" inherit="top"/>
     </body>
 
+{% endhighlight %}
+
 In the 'Overview' section, only 'Goals' is a generated page, which is why it has the slightly strange name. Just set it to 'plugin-info.html'
 and it will find it there.
 
@@ -176,6 +194,8 @@ Using the nicer design
 ----------------------
 
 To change the layout of a maven site, you specify a skin in the site.xml file. The following will get you the newer, more modern design:
+
+{% highlight xml %}
 
     <skin>
         <groupId>org.apache.maven.skins</groupId>
@@ -197,6 +217,8 @@ To change the layout of a maven site, you specify a skin in the site.xml file. T
         </fluidoSkin>
     </custom>
 
+{% endhighlight %}
+
 You can also see a few other config options around the 'fork me on github' banner, and google search.
 
 Generating the site during a release
@@ -212,6 +234,8 @@ is define your GitHub credentials in your `.m2/settings.xml` file, add a maven p
 
 First off, put your GitHub username and password in your Maven settings associated with the server ID 'github':
 
+{% highlight xml %}
+
     <settings>
         <servers>
             <server>
@@ -222,13 +246,21 @@ First off, put your GitHub username and password in your Maven settings associat
         </servers>
     </settings>
 
+{% endhighlight %}
+
 In your pom, you do need to tell the plugin which server ID you used:
+
+{% highlight xml %}
 
     <properties>
         <github.global.server>github</github.global.server>
     </properties>
 
+{% endhighlight %}
+
 And now just declare the site-maven-plugin:
+
+{% highlight xml %}
 
     <plugin>
         <groupId>com.github.github</groupId>
@@ -246,6 +278,8 @@ And now just declare the site-maven-plugin:
             </execution>
         </executions>
     </plugin>
+
+{% endhighlight %}
 
 It's probably a good idea to associate that plugin with profile that you only enable during releases so that you don't upload your maven site
 every time you run a build.

@@ -22,3 +22,18 @@ I just cloned. I pushed and cloned, then waited for a few minutes, and then I ha
 
 Then I just [made a few changes](https://github.com/danielflower/danielflower.github.io/commit/f2efeced6cc83e37fd0eb2e339d4e03d532ab98b), 
 pushed again, and this blog exists. Tools used: notepad++ and Git.
+
+### Update 1
+
+If this was my zeroith post, then I just posted my first actual post which included images and code. There were a couple
+of difficulties with this. First off, I was hoping images could live in a sub-directory next to the article, however
+because jekyll changes the directory during processing this isn't possible. So I had to put images in an `/images/` folder
+in the project root, and have image references such as `/images/mvn-site/mojo-options.png`.
+
+The second issue was around syntax highlighting of code samples. I was hoping I could just use github-flavoured markdown
+to specify the language, but I had to use Jekyll-specific code blocks to achieve this and then
+[add some highlighting css](https://github.com/richleland/pygments-css/blob/master/default.css).
+
+Debugging this was a bit annoying having to push to github and refresh to see any changes. But more annoying is that
+I had to introduce jekyll-specific code to my articles, and that the image references are wrong in the source code.
+Having said that though, I'm still happy with this simple setup.
