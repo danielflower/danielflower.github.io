@@ -45,13 +45,13 @@ is a perfectly charming URL.
 
 This repo is a Maven plugin and so has some mojos defined using annotations, with some javadoc, for example:
 
-```java
-/**
- * If true then tests will not be run during a release.
- */
-@Parameter(defaultValue = "false", property = "skipTests")
-private boolean skipTests;
-```
+{% highlight java %}
+    /**
+     * If true then tests will not be run during a release.
+     */
+    @Parameter(defaultValue = "false", property = "skipTests")
+    private boolean skipTests;
+{% endhighlight %}
 
 Given code like that, you get documentation generated looking like this:
 
@@ -63,7 +63,7 @@ Generating the site
 The first thing you should do is add a reference to the Maven site plugin and add the plugin that allows conversion of markdown
 to HTML during site generation:
 
-```xml
+{% highlight xml %}
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
@@ -76,7 +76,7 @@ to HTML during site generation:
             </dependency>
         </dependencies>
     </plugin>
-```
+{% endhighlight %}
 
 At this stage, running `mvn site` will generate an ugly site and stick it your `target/site` folder, however it will not have
 any documentation generated for the plugin goals and parameters. To do that, you need to add the `maven-plugin-plugin` to the
