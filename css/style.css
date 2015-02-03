@@ -2,11 +2,12 @@
 html, body {
     color: #333333;
     background-color: #FFFFFF;
-    font-family: 'Noto Serif', serif;
+    font-family: serif;
     font-size: 16pt;
     line-height: 150%;
     margin: 0;
     padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .top-strip {
@@ -30,10 +31,10 @@ html, body {
 }
 
 h1, h2, h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    
     font-size: 10vmin;
     font-weight: bold;
-    letter-spacing: 1vmin;
+
     line-height: 100%;
     margin: 60px 0 10px;
     padding-bottom: 25px;
@@ -54,7 +55,7 @@ h3 {
 h5 {
     font-size: 2vh;
     font-weight: normal;
-    letter-spacing: 2vmin;
+    letter-spacing: 1vmin;
     margin: 30px 0 -50px;
     text-align: center;
     text-transform: uppercase;
