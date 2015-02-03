@@ -9,49 +9,14 @@ html, body {
     padding: 0;
 }
 
-.icon-home:before {
-    font-family: FontAwesome;
-    content: "\f015"
-}
-.a-hover, .entries h3, .entries a, .home-icon a {
-    color: #333;
-    -webkit-transition: 0.3s linear;
-    -moz-transition: 0.3s linear;
-    -o-transition: 0.3s linear;
-    transition: 0.3s linear
-}
-
-.a-hover:hover, .entries h3:hover, .entries a:hover, .home-icon a:hover {
-    color: #333;
-    text-decoration: none;
-    opacity: 0.5;
-    filter: alpha(opacity=50)
-}
-
-.home-icon {
-    font-size: 2.5em;
-    margin: 1.5em 0 -1.1em
-}
-
-[class^="icon-"], [class*=" icon-"] {
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: inherit;
-    display: inline;
-    width: auto;
-    height: auto;
-    line-height: normal;
-    vertical-align: baseline;
-    background-image: none !important;
-    background-position: 0% 0%;
-    background-repeat: repeat
-}
-
-
 .top-strip {
     background-color: #000000;
     height: 14px;
+}
+
+.home-link {
+    width: 100%;
+    text-align: center;
 }
 
 .post, .row-fluid {
@@ -99,20 +64,6 @@ h5 {
     margin-top: 70px;
     text-align: center;
     text-transform: uppercase;
-    width: 100%;
-}
-
-.icon-home {
-    cursor: auto;
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    height: 42px;
-    line-height: normal;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: baseline;
     width: 100%;
 }
 

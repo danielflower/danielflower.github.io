@@ -6,11 +6,9 @@ layout: default
 <main class="content">
     <section class="container">
     	<div class="row-fluid">
-    		<article class="home-icon">
-				<a href="/">
-					<i class="icon-home"></i> 
-				</a>
-			</article>
+    		<div class="home-link">
+                <a href="/" title="Go to the homepage" alt="Home"><img src="/images/home.png" style="width:39px; height: 41px; border:0"</a>
+            </div>
 			<article class="post">
 				<h5>{{ page.date | date: "%d %B %Y" }}</h5>
 				<h2 class="content">{{page.title}}</h2>
