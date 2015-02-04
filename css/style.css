@@ -80,6 +80,12 @@ pre, code {
 }
 
 
+.post img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
 footer {
     width: 100%;
     background-color: #000000;

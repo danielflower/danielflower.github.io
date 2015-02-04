@@ -1,6 +1,6 @@
 ---
 layout: post_page
-title: Writing a responsive site by hand in using Chrome as an IDE
+title: Writing a responsive site by hand using Chrome as an IDE
 ---
 
 So I recently started this blog and just picked a simple Jekyll theme which I just
