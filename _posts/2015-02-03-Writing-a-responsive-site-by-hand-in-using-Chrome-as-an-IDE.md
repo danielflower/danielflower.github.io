@@ -59,7 +59,7 @@ But I digress. Next was to get it looking good full size.
 Desktop second
 --------------
 
-I turned off response mode in Chrome and refresh and it was little bit of a mess. The fonts
+I turned off responsive mode in Chrome and pressed refresh and it was little bit of a mess. The fonts
 were large and the text way too wide, but both of these were easily fixed: I just added
 a max-width to the container div, and removing some of the line-height, and then tweaked
 the font sizes. I found the following things helped:
@@ -68,6 +68,9 @@ the font sizes. I found the following things helped:
 * When the screen is narrow, you want to size headers relative to the width. When the
 screen is wide, you want to size them relative to the height. So I ended up using `vmin`
 for header units, which achieves this.
+* Set the `max-width` of images to `100%` so that when the page shrinks, the images shrink
+with it. This is not a perfect approach to responsive images but is amazingly simple and worked
+well for my site. 
 
 The results
 -----------
