@@ -100,7 +100,8 @@ and then change your release build to just call `releaser:release`.
 Installing
 ----------
 
-For information on the current version and other configuration, see the official documentation.
+For information on the current version and other configuration, see the
+[official documentation at the plugin page](https://github.com/danielflower/multi-module-maven-release-plugin).
 
 I hope you will give it a try and let me know if you have any feature requests, bugs, or other feedback on
 the [issue tracker at GitHub](https://github.com/danielflower/multi-module-maven-release-plugin/issues).
