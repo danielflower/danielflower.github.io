@@ -58,7 +58,8 @@ just those 3 columns, it's quite trivial to build up a map in clojure containing
     (def constraints
 
         ; load constraints from DB into cols
-        (let [cols (db/query "SELECT table_name, column_name, character_maximum_length
+        (let [cols (db/query "SELECT table_name, column_name, 
+                              character_maximum_length
                               FROM INFORMATION_SCHEMA.COLUMNS
                               WHERE table_schema = 'public'")]
             
@@ -87,11 +88,11 @@ Of course, you might want to make it a bit easier:
 
 {% highlight clojure %}
 
-    (defn max-length [table-key column-key]
-      (get-in constraints [table-key column-key :max-length]))
+(defn max-length [table-key column-key]
+    (get-in constraints [table-key column-key :max-length]))
       
-    (testing "the maximum length of the username field is known"
-        (is (= 50 (max-length :users :username))))
+(testing "the maximum length of the username field is known"
+    (is (= 50 (max-length :users :username))))
 {% endhighlight %}  
 
 To use this from an HTML templating engine, one approach is to simply associate the whole `constraints` map with your
@@ -100,7 +101,8 @@ you can just associate `:constraints constraints` and then use it from any HTML 
 the `maxlength` attribute on the login page:
 
 {% highlight html %}
-    <input type="text" name="username" maxlength="{% raw %}{{constraints.users.username.max-length}}{% endraw %}">
+    <input type="text" name="username" 
+        maxlength="{% raw %}{{constraints.users.username.max-length}}{% endraw %}">
 {% endhighlight %}
 
 Now if we need to increase or decrease the length of something like the username, we just change the column length in
