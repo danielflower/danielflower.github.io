@@ -79,9 +79,9 @@ test showing example usage from Clojure:
 
 {% highlight clojure %}
 
-    (deftest constraints-map
-        (testing "maximum lengths can be accessed via the big map of constraints"
-          (is (= 50 (get-in constraints [ :users :username  :max-length])))))
+(deftest constraints-map
+    (testing "maximum lengths can be accessed via the big map of constraints"
+        (is (= 50 (get-in constraints [ :users :username  :max-length])))))
 {% endhighlight %}
 
 Of course, you might want to make it a bit easier:
@@ -101,8 +101,8 @@ you can just associate `:constraints constraints` and then use it from any HTML 
 the `maxlength` attribute on the login page:
 
 {% highlight html %}
-    <input type="text" name="username" 
-        maxlength="{% raw %}{{constraints.users.username.max-length}}{% endraw %}">
+<input type="text" name="username" 
+       maxlength="{% raw %}{{constraints.users.username.max-length}}{% endraw %}">
 {% endhighlight %}
 
 Now if we need to increase or decrease the length of something like the username, we just change the column length in
