@@ -19,10 +19,12 @@ layout: default
 
             <section style="font-weight:bold; margin-top: 30px; margin-bottom: 2em;">
                 {% if page.previous %}
-                <a rel="prev" class="a-hover"href="{{ page.previous.url }}"><i class="icon-double-angle-left"></i> {{ page.previous.title }}</a>
+                Previous post:
+                <a rel="prev" class="a-hover" href="{{ page.previous.url }}"><i class="icon-double-angle-left"></i> {{ page.previous.title }}</a>
                 {% endif %}
                 {% if page.next %}
-                <a rel="next" style="float:right" class="a-hover"href="{{ page.next.url }}">{{ page.next.title }} <i class=" icon-double-angle-right"></i></a>
+                Next post:
+                <a rel="next" style="float:right" class="a-hover" href="{{ page.next.url }}">{{ page.next.title }} <i class=" icon-double-angle-right"></i></a>
                 {% endif %}
             </section>
 		</div>

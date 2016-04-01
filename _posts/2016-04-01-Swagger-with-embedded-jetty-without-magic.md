@@ -49,7 +49,7 @@ Swagger
 
 I have come to love-hate [Swagger](http://swagger.io/). The documentation generated is great to use, and I don't
 mind the copious amounts of annotation documentation added to the REST services, as the documentation lives with
-the code in source control and there is no other way to specify it. But I what I really dislike is how hard it is
+the code in source control and there is no better way to specify it that I can think of. But I what I really dislike is how hard it is
 to use if you use things like constructor-based dependency injection and want to have control over how it integrates
 with your embedded web server.
 
@@ -68,7 +68,7 @@ on XML:
     }
 {% endhighlight %}
 
-Isn't that just incredible? You create an instance of an object, call some setters, and then let the object
+Isn't that just incredibly scary? You create an instance of an object, call some setters, and then let the object
 be collected by the garbage collector. Furthermore, the order of the setters matters: `setScan` must be called
 last because that "setter" is what causes the config to be applied.
 
@@ -113,7 +113,8 @@ Here's what I came up with:
             .initConfig()
             .initScanner();
 
-        rc.packages(io.swagger.jaxrs.listing.ApiListingResource.class.getPackage().getName());
+        rc.packages(io.swagger.jaxrs.listing.ApiListingResource.class
+                      .getPackage().getName());
     }
 {% endhighlight %}
 
@@ -121,7 +122,7 @@ What this does is register only the classes of the REST resources that you have 
 registered with the ResourceConfig. There is no classpath scanning, no global variables, and no guessing
 about what is being registered and what is not.
 
-Sometimes, have more code that is easy to follow is much more preferable to having no code that requires
+Sometimes, having more code that is easy to follow is preferable to having no code that requires
 deep understanding of multiple frameworks to follow what is happening.
 
 Speaking of having lots of code, here are the swagger dependencies:
@@ -176,7 +177,8 @@ Then you can construct a context handler which you can add to your handlers list
     public static ContextHandler buildSwaggerUI() throws Exception {
         ResourceHandler rh = new ResourceHandler();
         rh.setResourceBase(App.class.getClassLoader()
-            .getResource("META-INF/resources/webjars/swagger-ui/2.1.4").toURI().toString());
+            .getResource("META-INF/resources/webjars/swagger-ui/2.1.4")
+            .toURI().toString());
         ContextHandler context = new ContextHandler();
         context.setContextPath("/docs/");
         context.setHandler(rh);
