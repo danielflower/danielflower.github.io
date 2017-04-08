@@ -45,7 +45,7 @@ This is one off, so just ran manually from my user's home dir: `sudo ./certbot-a
 
 It will ask some questions: select `Place files in webroot directory (webroot)` and give it the path to the directory
 specified in the special resource handler - `/opt/myapp/letsencryptvalidationdir` in my example. Assuming your web app
-is running (it will us http on port 80, or https on port 443, not sure which) then it will output a bunch of files
+is running (it will use http on port 80, or https on port 443, not sure which) then it will output a bunch of files
 in a directory similar to `/etc/letsencrypt/live/www.your-domain.com`
 
 These are pem files - to convert this to a keystore format that Java could use, I created the following script (which
